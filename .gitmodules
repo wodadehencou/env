@@ -1,0 +1,6 @@
+[submodule "antigen"]
+	path = antigen
+	url = https://github.com/zsh-users/antigen.git
+[submodule "k-vim"]
+	path = k-vim
+	url = https://github.com/wodadehencou/k-vim.git
