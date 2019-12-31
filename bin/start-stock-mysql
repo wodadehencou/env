@@ -1,0 +1,18 @@
+#!/bin/bash
+
+if [ "$(docker ps -aq -f name=stockdb)" ]; then
+	if [ ! "$(docker ps -q -f name=stockdb)" ]; then
+		docker start stockdb
+	fi
+else
+	docker run \
+		--name stockdb \
+		-v /Users/jam/Documents/StockData:/var/lib/mysql \
+		-e MYSQL_ROOT_PASSWORD=root \
+		-e MYSQL_DATABASE=stock \
+		-e MYSQL_USER=stock \
+		-e MYSQL_PASSWORD=stock \
+		-p 13306:3306 \
+		-d mysql
+fi
+

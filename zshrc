@@ -15,11 +15,8 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-history-substring-search
 antigen bundle skywind3000/z.lua
 antigen bundle $ENV/jam-zsh-plugin --no-local-clone
-
 antigen theme tonyseek/oh-my-zsh-seeker-theme seeker
+#antigen theme romkatv/powerlevel10k
 
 antigen apply
-
-
-
 

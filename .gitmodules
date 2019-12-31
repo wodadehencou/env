@@ -4,3 +4,6 @@
 [submodule "k-vim"]
 	path = k-vim
 	url = https://github.com/wodadehencou/k-vim.git
+[submodule "google-access-helper"]
+	path = google-access-helper
+	url = https://github.com/haotian-wang/google-access-helper.git

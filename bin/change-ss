@@ -1,0 +1,21 @@
+#!/usr/bin/env python3
+
+import os
+import subprocess
+
+def main():
+    target = '/usr/local/etc/shadowsocks-libev.json'
+    current = os.path.realpath(target)
+    if current == '/usr/local/etc/shadowsocks-libev.json.zpc':
+        new = '/usr/local/etc/shadowsocks-libev.json.aws'
+    if current == '/usr/local/etc/shadowsocks-libev.json.aws':
+        new = '/usr/local/etc/shadowsocks-libev.json.zpc'
+
+    print("using", new)
+    os.remove(target)
+    os.symlink(new, target)
+    subprocess.call(['brew', 'services', 'restart', 'shadowsocks-libev'])
+
+if __name__ == '__main__':
+	main()
+

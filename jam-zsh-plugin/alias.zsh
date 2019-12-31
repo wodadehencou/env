@@ -11,7 +11,7 @@ alias ssh='ssh -o serveraliveinterval=360 -X'
 
 alias cp='cp -i'
 alias mv='mv -i'
-alias rm='rm -i'
+alias rm='rm -r -i'
 # alias ls='ls -F --color=auto'
 alias ll='ls -l'
 alias la='ls -a'
@@ -46,7 +46,7 @@ function setgopath() {
 			DIR=`dirname ${DIR}`
 		fi
 	done
-	
+
 	if [ $DIR = $HOME ]; then
 		echo "Can't find a valid GOPATH"
 	else
@@ -62,7 +62,7 @@ function addgopath () {
 	DIR=`pwd`
 	echo $DIR
 	#echo $HOME
-	
+
 	while [ $DIR != $HOME ]; do
 		#echo $DIR
 		if [ -d ${DIR}/src ]; then
@@ -71,7 +71,7 @@ function addgopath () {
 			DIR=`dirname ${DIR}`
 		fi
 	done
-	
+
 	if [ $DIR = $HOME ]; then
 		echo "Can't find a valid GOPATH"
 	else
@@ -97,7 +97,7 @@ function gfw () {
 unsetopt share_history
 
 #PATH=~/.local/bin:$PATH
-#PATH=$ENV/script:$PATH
+PATH=$ENV/bin:$PATH
 #PATH=~/Programs/bin:$PATH
-#export PATH
+export PATH
 
