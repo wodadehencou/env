@@ -83,8 +83,10 @@ function addgopath () {
 }
 
 function gfw () {
-	export http_proxy=socks5://127.0.0.1:1080
-	export https_proxy=socks5://127.0.0.1:1080
+	# export http_proxy=socks5://127.0.0.1:1080
+	# export https_proxy=socks5://127.0.0.1:1080
+	export http_proxy=http://127.0.0.1:8118
+	export https_proxy=http://127.0.0.1:8118
 }
 #export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 

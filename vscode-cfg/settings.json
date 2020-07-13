@@ -1,0 +1,442 @@
+{
+    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: LLVM, UseTab: Never, IndentWidth: 4, TabWidth: 4, AllowShortIfStatementsOnASingleLine: false, IndentCaseLabels: false, ColumnLimit: 0, AccessModifierOffset: -4 }",
+    "C_Cpp.updateChannel": "Insiders",
+
+    // ## Explorer
+    // - hide open editors, use leader-p to choose
+    "explorer.openEditors.visible": 0,
+    "explorer.confirmDragAndDrop": false,
+
+    // ## Editor
+    "editor.fontFamily": "'Cascadia Code', 'Pragmata Mono', 'VictorMono Nerd Font Mono', 'Courier Prime', 'Inconsolata for Powerline', 'Dejavu sans mono for Powerline', Menlo, 'Input', Monaco, monospace",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 16,
+    "editor.minimap.enabled": false,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.suggestSelection": "first",
+    "editor.wordWrapColumn": 120,
+    "editor.dragAndDrop": false,
+    "editor.glyphMargin": true,
+    // - active suggestion in comments and string
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": true,
+        "strings": true
+    },
+    // - a lot of noisy
+    "editor.parameterHints.enabled": false,
+    "editor.rulers": [
+        120
+    ],
+    "editor.tokenColorCustomizations": {
+        "textMateRules": []
+    },
+    // - prevent the editor from scrolling beyond the last line.
+    "editor.scrollBeyondLastLine": false,
+    "debug.console.fontSize": 12,
+    "files.eol": "\n",
+    "files.exclude": {
+        ".vscode": true,
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true,
+        "**/.coverage": true,
+        "**/*.pyc": true,
+        "**/__pycache__": true,
+    },
+    "files.trimTrailingWhitespace": true,
+    "search.showLineNumbers": true,
+    "search.smartCase": true,
+    "nasc-touchbar.addCursorBelow": false,
+    "open-in-vim.openMethod": "gvim",
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.scrollback": 8192,
+    "terminal.integrated.shell.osx": "zsh",
+    "terminal.external.osxExec": "iTerm.app",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "window.zoomLevel": 0,
+    // ## Workbench
+    "workbench.colorCustomizations": {},
+    "workbench.colorTheme": "Noctis",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.statusBar.feedback.visible": false,
+    // ## Golang
+    "go.inferGopath": true,
+    "go.useLanguageServer": true,
+    "[go]": {
+        // "editor.snippetSuggestions": "bottom",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        },
+    },
+    "[go.mod]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true,
+        },
+    },
+    "gopls": {
+        "usePlaceholders": true, // add parameter placeholders when completing a function
+        "completionDocumentation": true, // for documentation in completion items
+        // ----- Experimental settings -----
+        "completeUnimported": true, // autocomplete unimported packages
+        // "watchFileChanges": true,  // watch file changes outside of the editor
+        "deepCompletion": true, // deep completion
+    },
+    "go.formatTool": "goreturns",
+    "go.alternateTools": {
+        "goreturns": "gofumpt"
+    },
+    "go.lintTool":"golangci-lint",
+    "go.lintFlags": [
+        "--fast"
+    ],
+    "go.buildOnSave": "package",
+    "go.useCodeSnippetsOnFunctionSuggest": true,
+    // ## Python
+    "python.jediEnabled": false,
+    "python.venvPath": "~/Workspace/python", // formatting only supports LF line endings
+    "python.formatting.provider": "yapf",
+    "python.linting.pylintArgs": [
+        "--enable=W0614",
+        "--disable=C0111"
+    ],
+    "[python]": {
+        "editor.insertSpaces": true,
+        "editor.formatOnSave": true,
+        "editor.tabSize": 4
+    },
+    "cSpell.userWords": [
+        "cathaya",
+        "dzkp",
+        "fimax",
+        "montgomary",
+        "pedersen",
+        "protobuf",
+        "protos",
+        "segmentio",
+        "stretchr",
+        "wodadehencou",
+        "wrapf"
+    ],
+    "dart.allowAnalytics": false,
+    "[dart]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        },
+    },
+    // ## Extension: scrolloff
+    "scrolloff.scrolloff": 5,
+    // ## Extension: vim
+    "vim.leader": ",",
+    "vim.hlsearch": true,
+    "vim.textwidth": 120,
+    "vim.visualstar": true,
+    "vim.insertModeKeyBindings": [
+        // - k-j to ESC
+        {
+            "before": [
+                "k",
+                "j"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        }
+    ],
+    // - references: https://code.visualstudio.com/docs/getstarted/keybindings#_default-keybindings
+    "vim.normalModeKeyBindingsNonRecursive": [
+        // - leader-q to quit
+        {
+            "before": [
+                "leader",
+                "q"
+            ],
+            "commands": [
+                {
+                    "command": "workbench.action.files.save",
+                    "args": []
+                },
+                {
+                    "command": "workbench.action.closeActiveEditor",
+                    "args": []
+                }
+            ]
+        },
+        // - leader-w to save
+        {
+            "before": [
+                "leader",
+                "w"
+            ],
+            "commands": [
+                {
+                    "command": "workbench.action.files.save",
+                    "args": []
+                }
+            ]
+        },
+        // - leader-gd to goToDefinition
+        {
+            "before": [
+                "leader",
+                "g",
+                "d"
+            ],
+            "after": [
+                "g",
+                "d"
+            ]
+        },
+        // - leader-jd to goToDefinition
+        {
+            "before": [
+                "leader",
+                "j",
+                "d"
+            ],
+            "after": [
+                "g",
+                "d"
+            ]
+        },
+        // - leader-gh show help-tip-def
+        {
+            "before": [
+                "leader",
+                "g",
+                "h"
+            ],
+            "after": [
+                "g",
+                "h"
+            ]
+        },
+        // - leader-h show help-tip-def
+        {
+            "before": [
+                "leader",
+                "h"
+            ],
+            "after": [
+                "g",
+                "h"
+            ]
+        },
+        // - leader-cc comment
+        {
+            "before": [
+                "leader",
+                "c",
+                "c"
+            ],
+            "commands": [
+                "editor.action.addCommentLine"
+            ]
+        },
+        // - leader-cu uncomment
+        {
+            "before": [
+                "leader",
+                "c",
+                "u"
+            ],
+            "commands": [
+                "editor.action.removeCommentLine"
+            ]
+        },
+        // - switch # and *
+        {
+            "before": [
+                "*"
+            ],
+            "after": [
+                "#"
+            ]
+        },
+        {
+            "before": [
+                "#"
+            ],
+            "after": [
+                "*"
+            ]
+        },
+        // - show the command palette
+        {
+            "before": [
+                ";"
+            ],
+            "commands": [
+                "workbench.action.showCommands",
+            ]
+        },
+        // - leader-p to all opened editors
+        {
+            "before": [
+                "leader",
+                "p"
+            ],
+            "commands": [
+                "workbench.action.openNextRecentlyUsedEditorInGroup"
+            ]
+        },
+        // - leader-f: go to file
+        {
+            "before": [
+                "leader",
+                "f"
+            ],
+            "commands": [
+                "workbench.action.quickOpen",
+            ]
+        },
+        // - leader-g go to symbol
+        {
+            "before": [
+                "leader",
+                "g"
+            ],
+            "commands": [
+                "workbench.action.gotoSymbol",
+            ]
+        },
+        // - leader-s show problems
+        {
+            "before": [
+                "leader",
+                "s"
+            ],
+            "commands": [
+                "workbench.actions.view.problems"
+            ]
+        },
+        // - leader-en Go to Next Error or Warning
+        {
+            "before": [
+                "leader",
+                "e",
+                "n"
+            ],
+            "commands": [
+                "editor.action.marker.nextInFiles"
+            ]
+        },
+        // - leader-ep Go to Previous Error or Warning
+        {
+            "before": [
+                "leader",
+                "e",
+                "p"
+            ],
+            "commands": [
+                "editor.action.marker.prevInFiles"
+            ]
+        },
+        // - leader-/ to turn-off highlight
+        {
+            "before": [
+                "leader",
+                "/"
+            ],
+            "commands": [
+                ":nohl",
+            ]
+        },
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        // - leader-cc comment
+        {
+            "before": [
+                "<leader>",
+                "c",
+                "c"
+            ],
+            "commands": [
+                "editor.action.addCommentLine"
+            ]
+        },
+        // - leader-cu uncomment
+        {
+            "before": [
+                "<leader>",
+                "c",
+                "u"
+            ],
+            "commands": [
+                "editor.action.removeCommentLine"
+            ]
+        },
+        // - indent/outdent lines (repeatable)
+        {
+            "before": [
+                ">"
+            ],
+            "commands": [
+                "editor.action.indentLines"
+            ]
+        },
+        {
+            "before": [
+                "<"
+            ],
+            "commands": [
+                "editor.action.outdentLines"
+            ]
+        },
+    ],
+    // - auto switch input. detail https://github.com/VSCodeVim/Vim#input-method
+    "vim.autoSwitchInputMethod.enable": true,
+    "vim.autoSwitchInputMethod.defaultIM": "com.apple.keylayout.ABC",
+    "vim.autoSwitchInputMethod.obtainIMCmd": "/usr/local/bin/im-select",
+    "vim.autoSwitchInputMethod.switchIMCmd": "/usr/local/bin/im-select {im}",
+    // - easymotion. detail https://github.com/VSCodeVim/Vim#vim-easymotion
+    "vim.easymotion": true,
+    "vim.easymotionMarkerFontFamily": "Menlo",
+    "vim.easymotionMarkerFontSize": "16",
+    "vim.easymotionMarkerHeight": 24,
+    "vim.easymotionMarkerBackgroundColor": "#f44242",
+    "zenMode.hideLineNumbers": false,
+    "zenMode.hideStatusBar": false,
+    "zenMode.hideTabs": false,
+    "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx1G -Xms100m -javaagent:\"/Users/jam/.vscode/extensions/gabrielbb.vscode-lombok-1.0.1/server/lombok.jar\"",
+    "debug.allowBreakpointsEverywhere": true,
+    // ## Rust
+    "[rust]": {
+        // "editor.snippetSuggestions": "bottom",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        },
+    },
+
+    // ## protobuf
+    "[proto3]": {
+        "editor.formatOnSave": true,
+        "editor.tabSize": 2
+    },
+
+    "leetcode.endpoint": "leetcode-cn",
+    "leetcode.workspaceFolder": "/Users/jam/.leetcode",
+    "leetcode.defaultLanguage": "rust",
+    "leetcode.hint.commandShortcut": false,
+    "leetcode.hint.configWebviewMarkdown": false,
+    "leetcode.hint.commentDescription": false,
+    "terminal.integrated.fontFamily": "'Iosevka Nerd Font'",
+    "hediet.vscode-drawio.local-storage": "eyIuZHJhd2lvLWNvbmZpZyI6IntcImxhbmd1YWdlXCI6XCJcIixcImN1c3RvbUZvbnRzXCI6W10sXCJsaWJyYXJpZXNcIjpcImdlbmVyYWw7dW1sO2VyO2JwbW47Zmxvd2NoYXJ0O2Jhc2ljO2Fycm93czJcIixcImN1c3RvbUxpYnJhcmllc1wiOltcIkwuc2NyYXRjaHBhZFwiXSxcInBsdWdpbnNcIjpbXSxcInJlY2VudENvbG9yc1wiOltdLFwiZm9ybWF0V2lkdGhcIjpcIjI0MFwiLFwiY3JlYXRlVGFyZ2V0XCI6ZmFsc2UsXCJwYWdlRm9ybWF0XCI6e1wieFwiOjAsXCJ5XCI6MCxcIndpZHRoXCI6ODUwLFwiaGVpZ2h0XCI6MTEwMH0sXCJzZWFyY2hcIjp0cnVlLFwic2hvd1N0YXJ0U2NyZWVuXCI6dHJ1ZSxcImdyaWRDb2xvclwiOlwiI2QwZDBkMFwiLFwiZGFya0dyaWRDb2xvclwiOlwiIzZlNmU2ZVwiLFwiYXV0b3NhdmVcIjp0cnVlLFwicmVzaXplSW1hZ2VzXCI6bnVsbCxcIm9wZW5Db3VudGVyXCI6MCxcInZlcnNpb25cIjoxOCxcInVuaXRcIjoxLFwiaXNSdWxlck9uXCI6ZmFsc2UsXCJ1aVwiOlwiXCJ9In0=",
+    "vim.useSystemClipboard": true,
+    // "editor.fontWeight": "600",
+    "java.semanticHighlighting.enabled": true,
+    "remote-github.keystorePath": "/Users/jam/.env/remote-github.keystore",
+    "rust-client.channel": "nightly",
+    "rust-analyzer.cargo.allFeatures": true,
+    "rust-analyzer.cargo.loadOutDirsFromCheck": true,
+    "tabnine.experimentalAutoImports": true,
+    "http.proxy": "http://127.0.0.1:8118",
+    "editor.acceptSuggestionOnEnter": "smart",
+}

@@ -5,8 +5,8 @@ PROGRAM="$HOME/Programs"
 # Go support
 #export GOROOT="$PROGRAM/go1.12"
 #PATH="$GOROOT/bin:$PATH"
-export GOPATH="$PROGRAM/gopath"
-PATH="$GOPATH/bin:$PATH"
+GOPATH="$HOME/.gopath"
+export PATH="$GOPATH/bin:$PATH"
 
 # Java JDK support
 #export JAVA_HOME="$PROGRAM/jdk1.8.0_162"
@@ -31,8 +31,18 @@ PATH="$GOPATH/bin:$PATH"
 #export ENV="/home/jam/env"
 #
 
+# Android
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export ANDROID_NDK_HOME="$ANDROID_HOME/ndk/21.0.6113669"
+export PATH="$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH"
+
+# flutter
+export PATH="$PROGRAM/flutter/.pub-cache/bin:$PROGRAM/flutter/bin:$PATH"
+export PUB_HOSTED_URL="https://pub.flutter-io.cn"
+export FLUTTER_STORAGE_BASE_URL="https://storage.flutter-io.cn"
+
 # homebrew support
-export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
+export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
 
 
 export PATH="$HOME/.cargo/bin:$PATH"

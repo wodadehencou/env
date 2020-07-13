@@ -1,0 +1,59 @@
+allprojects{
+    repositories {
+        def ALIYUN_REPOSITORY_URL = 'http://maven.aliyun.com/repository/central'
+        def ALIYUN_JCENTER_URL = 'http://maven.aliyun.com/repository/jcenter'
+        def ALIYUN_GOOGLE_URL = 'http://maven.aliyun.com/repository/google'
+        def ALIYUN_GRADLE_PLUGIN_URL = 'http://maven.aliyun.com/repository/gradle-plugin'
+        def ALIYUN_SPRING_URL = 'http://maven.aliyun.com/repository/spring'
+        def ALIYUN_SPRING_PLUGIN_URL = 'http://maven.aliyun.com/repository/spring-plugin'
+        def ALIYUN_GRAILS_CORE_URL = 'http://maven.aliyun.com/repository/grails-core'
+        def ALIYUN_APACHE_SNAPSHOTS_URL = 'http://maven.aliyun.com/repository/apache-snapshots'
+        all { ArtifactRepository repo ->
+            if(repo instanceof MavenArtifactRepository){
+                def url = repo.url.toString()
+                if (url.startsWith('https://repo1.maven.org/maven2')) {
+                    project.logger.lifecycle "Repository ${repo.url} replaced by $ALIYUN_REPOSITORY_URL."
+                    remove repo
+                }
+                if (url.startsWith('https://jcenter.bintray.com/')) {
+                    project.logger.lifecycle "Repository ${repo.url} replaced by $ALIYUN_JCENTER_URL."
+                    remove repo
+                }
+                if (url.startsWith('https://maven.google.com/')) {
+                    project.logger.lifecycle "Repository ${repo.url} replaced by $ALIYUN_GOOGLE_URL."
+                    remove repo
+                }
+                if (url.startsWith('https://plugins.gradle.org/m2/')) {
+                    project.logger.lifecycle "Repository ${repo.url} replaced by $ALIYUN_GRADLE_PLUGIN_URL."
+                    remove repo
+                }
+                if (url.startsWith('http://repo.spring.io/libs-milestone/')) {
+                    project.logger.lifecycle "Repository ${repo.url} replaced by $ALIYUN_SPRING_URL."
+                    remove repo
+                }
+                if (url.startsWith('http://repo.spring.io/plugins-release/')) {
+                    project.logger.lifecycle "Repository ${repo.url} replaced by $ALIYUN_SPRING_PLUGIN_URL."
+                    remove repo
+                }
+                if (url.startsWith('https://repo.grails.org/grails/core')) {
+                    project.logger.lifecycle "Repository ${repo.url} replaced by $ALIYUN_GRAILS_CORE_URL."
+                    remove repo
+                }
+                if (url.startsWith('https://repository.apache.org/snapshots/')) {
+                    project.logger.lifecycle "Repository ${repo.url} replaced by $ALIYUN_APACHE_SNAPSHOTS_URL."
+                    remove repo
+                }
+            }
+        }
+        maven {
+            url ALIYUN_REPOSITORY_URL
+            url ALIYUN_JCENTER_URL
+            url ALIYUN_GOOGLE_URL
+            url ALIYUN_GRADLE_PLUGIN_URL
+            url ALIYUN_SPRING_URL
+            url ALIYUN_SPRING_PLUGIN_URL
+            url ALIYUN_GRAILS_CORE_URL
+            url ALIYUN_APACHE_SNAPSHOTS_URL
+        }
+    }
+}
