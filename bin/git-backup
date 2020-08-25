@@ -1,0 +1,11 @@
+#!/bin/bash
+
+URL=$1
+REPO=$(basename ${URL})
+
+echo "backup repo ${REPO}"
+
+git clone --mirror $URL $REPO
+cd $REPO && git bundle create ../$REPO.bundle --all
+cd .. && rm -rf $REPO
+

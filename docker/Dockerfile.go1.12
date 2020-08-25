@@ -1,0 +1,5 @@
+FROM buildenv
+
+RUN go get golang.org/dl/go1.12.17 && \
+	go1.12.17 download
+

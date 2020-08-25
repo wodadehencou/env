@@ -1,0 +1,9 @@
+#!/bin/bash
+
+URL=$1
+REPO=$(basename -s .git ${URL})
+
+echo "clone github repo ${REPO}"
+
+git clone --depth 1 $URL $REPO
+
