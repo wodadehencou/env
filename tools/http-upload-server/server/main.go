@@ -9,6 +9,7 @@ import (
 	"net"
 	"net/http"
 	"os"
+	"path"
 	"strconv"
 	"text/template"
 	"time"
@@ -63,7 +64,7 @@ func uploadHandler(w http.ResponseWriter, r *http.Request) {
 		}
 		defer file.Close()
 		fmt.Fprintf(w, "%v", handler.Header)
-		f, err := os.OpenFile("./"+handler.Filename, os.O_WRONLY|os.O_CREATE, 0666)
+		f, err := os.OpenFile("./"+path.Base(handler.Filename), os.O_WRONLY|os.O_CREATE, 0666)
 		if err != nil {
 			fmt.Println(err)
 			return
